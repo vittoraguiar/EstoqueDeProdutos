@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ProdutosEstoque
 {
@@ -6,20 +6,19 @@ namespace ProdutosEstoque
     {
         static void Main(string[] args)
         {
-            // Declaração da variável que irá receber os dados dos produtos
-            Produto prod = new Produto();
-            
             // Declaração das variáveis
             char criterio = 's';
 
             Console.WriteLine("Entre os dados do produto:");
             Console.Write("Produto: ");
-            prod.Nome = Console.ReadLine()!;
+            string nome = Console.ReadLine()!;
             Console.Write("Preço: ");
-            prod.Preco = double.Parse(Console.ReadLine()!);
+            double preco = double.Parse(Console.ReadLine()!);
             Console.Write("Quantidade no estoque: ");
-            prod.Quantidade = int.Parse(Console.ReadLine()!);
+            int quantidade = int.Parse(Console.ReadLine()!);
 
+            Produto prod = new Produto(nome, preco, quantidade);
+            
             // Mostra os dados do produto
             Console.Write("\nDados do produto: " + prod);
             Console.WriteLine();
